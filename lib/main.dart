@@ -1,6 +1,4 @@
-import 'package:esc_pos_bluetooth/esc_pos_bluetooth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blue/flutter_blue.dart';
 import 'package:woosim_flutter/woosim_bluetooth_service.dart';
 
 void main() {
@@ -33,12 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  PrinterBluetoothManager printerBluetoothManager = PrinterBluetoothManager();
-  late final FlutterBlue flutterBlue;
-
   WoosimBluetoothService woosimBluetoothService = WoosimBluetoothService();
-
-  List<PrinterBluetooth> printers = [];
 
   String data = '';
 
@@ -72,18 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
         "\n"
         "\n";
 
-    flutterBlue = FlutterBlue.instance;
-    printerBluetoothManager.startScan(const Duration(seconds: 4));
-    scan();
     super.initState();
   }
 
   Future<void> initializePrinter()async {
     await woosimBluetoothService.init();
-  }
-
-  void scan(){
-    flutterBlue.startScan(timeout: const Duration(seconds: 4));
   }
 
   @override

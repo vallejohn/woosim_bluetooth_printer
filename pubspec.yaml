@@ -30,8 +30,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  esc_pos_bluetooth: ^0.4.1
-  flutter_blue: ^0.8.0
   rxdart: ^0.26.0
 
   # The following adds the Cupertino Icons font to your application.
