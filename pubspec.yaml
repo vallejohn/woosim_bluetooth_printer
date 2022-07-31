@@ -30,6 +30,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  esc_pos_bluetooth: ^0.4.1
+  flutter_blue:
+    git:
+      url: https://github.com/espresso3389/flutter_blue.git
   rxdart: ^0.26.0
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,6 +43,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  rxdart: ^0.27.3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

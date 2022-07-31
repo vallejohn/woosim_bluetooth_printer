@@ -97,10 +97,12 @@ public class MainActivity extends FlutterActivity {
     }
 
     private List<Map<String, String>> DoDiscovery(){
+        System.out.println("DO DISCOVERY");
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
         List<Map<String, String>> deviceList = new ArrayList<>();
 
-        if(permissionCheck == PackageManager.PERMISSION_GRANTED){
+        //if(permissionCheck == PackageManager.PERMISSION_GRANTED){
+            System.out.println("PERMISSION GRANTED");
             if(bluetoothAdapter.isDiscovering()){
                 bluetoothAdapter.cancelDiscovery();
             }
@@ -124,7 +126,7 @@ public class MainActivity extends FlutterActivity {
             }else{
                 System.out.println("NO DEVICES FOUND");
             }
-        }
+        //}
         return deviceList;
     }
 
